@@ -1,3 +1,7 @@
+//My Keepvid Bookmarklet of friendliness!!!!
+//My school blocks YouTube so all of my teachers use the Keepvid website.
+//This tool should make them very happy (more than they are already with me :))
+
 if (window.location.host == "youtube.com") {
 	alert("Do you know the difference between YouTube and a YouTube VIDEO????????");
 } else {
