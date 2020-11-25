@@ -1,4 +1,4 @@
-if (window.location.host + window.location.pathname == "www.youtube.com/") {
+if ((window.location.host + window.location.pathname == "www.youtube.com/") || (window.location.host + window.location.pathname == "www.youtube.com")) {
 	alert("Do you know the difference between YouTube and a YouTube VIDEO????????");
 } else {
 	if (window.location.host + window.location.pathname == "www.youtube.com/watch") {
