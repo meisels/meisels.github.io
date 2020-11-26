@@ -9,7 +9,8 @@ if (window.location.host + window.location.pathname == "www.youtube.com/watch") 
 	document.getElementsByClassName("btn btn-lg btn-danger")[0].click();
 } else {
 	var video = encodeURI(prompt("Paste the video URL here (if you didn't copy it yet, press cancel)."));
-	if (video.includes("https://www.youtube.com/watch") {
-		alert("Click this bookmarklet after the page redirects to play the video.");					window.location.replace("https://keepvid.works/?url=" + window.location);
+	if (video.includes("https://www.youtube.com/watch")) {
+		alert("Click this bookmarklet after the page redirects to play the video.");
+		window.location.replace("https://keepvid.works/?url=" + window.location);
 	}
 };
