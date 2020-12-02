@@ -3,7 +3,8 @@ if (done != 1 && window.location.hostname.match(/\w*\.\w*$/gi)[0] + window.locat
 	var buttonLink = document.createElement("a");
 	var buttonPicture = document.createElement("img");
 	var buttonText = document.createTextNode("Excel");
-	elem.setAttribute("src", "../images/page_white_excel.png");x.setAttribute("href", "javascript:window.location.replace(window.location + '&media=excel');");
+	buttonPicture.setAttribute("src", "../images/page_white_excel.png");
+	buttonLink.setAttribute("href", "javascript:window.location.replace(window.location + '&media=excel');");
 	buttonLink.setAttribute("class", "toplink");
 	buttonLink.appendChild(buttonPicture);
 	buttonLink.appendChild(buttonText);
