@@ -1,8 +1,3 @@
-// If you are on the GameJolt API (which is pretty much only me), this is here for your convienience!! (You also have to be embedding this dynamically :P)
-if (window.location.host == "api.gamejolt.com") {
-	window.location.replace(window.location.href + "&signature=" + MD5(window.location.href + "8bbfa92af6f3b00db6b37323ff8dfa8f"));
-}
-
 var MD5 = function (string) {
 
    function RotateLeft(lValue, iShiftBits) {
@@ -202,4 +197,9 @@ var MD5 = function (string) {
    	var temp = WordToHex(a)+WordToHex(b)+WordToHex(c)+WordToHex(d);
 
    	return temp.toLowerCase();
+}
+
+// If you are on the GameJolt API (which is pretty much only me), this is here for your convienience!! (You also have to be embedding this dynamically :P)
+if (window.location.host == "api.gamejolt.com" && new URL(location.href).searchParams.get("signature") == null) {
+	window.location.replace(window.location.href + "&signature=" + MD5(window.location.href + "8bbfa92af6f3b00db6b37323ff8dfa8f"));
 }
