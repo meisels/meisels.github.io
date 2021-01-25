@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Markdown Converter</title>
+        <meta name="description" content="My pathetic looking website.">
+        <meta name="keywords" content="ari, meisels, ari meisels, markdown, markdown convert, markdown to html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://avatars3.githubusercontent.com/u/68653653?s=48&v=4">
+        <link rel="stylesheet" href="/style.css">
+        <iframe id="iframe" src="/navbar.html" class="nav"></iframe>
+        <iframe id="markdownFrame" src="/markdown/markdown.html" style="position:fixed;top:0px;bottom:0px;right:0px;width:100%;border:none;margin:0;padding:0;overflow: hidden;z-index:999999;height:100%;visibility:hidden;"></iframe>
+    </head>
+    <body>
+        <h1>Markdown to HTML Converter</h1>
+        <br>
+        <img src="/markdown/message.png" width="auto" height="50">
+        <p>So this got me thinking... how hard could it be? So I did a little Googling and copied the code from <a href="https://www.bigomega.dev/markdown-parser" target="_blank">this site</a>. Then I edited it a little to include more markdown stuff and added a GUI (Graphic User Interface). To see it, click <a href="#" onclick="showGUI()">here</a>.</p>
+        <p>Just a fair warning, there are a few bugs. For example, the script is incapable of reading 2 sets of asterisks on 1 line. Use <code>*1**2*</code> (should produce <i>1</i><i>2</i> but instead produces <i>1**2</i>).</p>
+        <script>
+            function showGUI() {
+                document.getElementsByTagName("body")[0].style.visibility = "hidden";
+                document.getElementById("markdownFrame").style.visibility = "visible";
+            }
+            function hideGUI() {
+                document.getElementsByTagName("body")[0].style.visibility = "visible";
+                document.getElementById("markdownFrame").style.visibility = "hidden";
+            }
+        </script>
+    </body>
+</html>

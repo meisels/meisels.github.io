@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Real Markdown Converter</title>
+        <meta name="description" content="My pathetic looking website.">
+        <meta name="keywords" content="ari, meisels, ari meisels, markdown, markdown convert, markdown to html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://avatars3.githubusercontent.com/u/68653653?s=48&v=4">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <textarea id="textToMarkdown" cols="75" rows="20" placeholder="Type markdown here..." style="margin-left:50px;"></textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <textarea id="markdownCode" cols="75" rows="20" placeholder="HTML code area" style="float:right;margin-right:50px;" readonly></textarea>
+        
+        <div id="markdownText" style="font-family:sans-serif;overflow-wrap:break-word;">
+            <div style="float:left;margin-left:450px;">
+                <h1># - H1</h1>
+                <h2>## - H2</h2>
+                <h3>### - H3</h3>
+                <h4>#### - H4</h4>
+                <h5>##### - H5</h5>
+            </div>
+            <div style="float:left;margin-left:20px;">
+                <h6>###### - H6</h6>
+                <blockquote>> - Indent</blockquote>
+                *[text]* - <i>Italics</i>
+                <br>
+                <br>
+                **[text]** - <b>Bold</b>
+                <br>
+                <br>
+                __[text]__ - <u>Underline</u>
+                <br>
+                <br>
+                ~~[text]~~ - <strike>Strikethrough</strike>
+            </div>
+            <div style="float:left;margin-left:5px;margin-top:20px;">
+                `[text]` - <code>Code Block</code>
+                <br>
+                <br>
+                [blank line] - [new line]
+            </div>
+        </div>
+        
+        <script>
+            function parseMarkdown(markdownText) {
+                const htmlText = markdownText
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+                .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
+                .replace(/^###### (.*$)/gim, '<h6>$1</h6>')
+                .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+                .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+                .replace(/\*(.*)\*/gim, '<i>$1</i>')
+                .replace(/\_\_(.*)\_\_/gim, '<u>$1</u>')
+                .replace(/\~\~(.*)\~\~/gim, '<strike>$1</strike>')
+                .replace(/\`(.*)\`/gim, '<code>$1</code>')
+                .replace(/\n$/gim, '<br>')
+                
+                return htmlText.trim()
+            };
+            
+            $("#textToMarkdown").on("input", function(e) {
+                var input = $(this);
+                var val = input.val();
+                
+                if (input.data("lastval") != val) {
+                    input.data("lastval", val);
+                    const text = document.getElementById("textToMarkdown").value;
+                    document.getElementById("markdownCode").innerHTML = parseMarkdown(text);
+                    document.getElementById("markdownText").innerHTML = "<br>" + parseMarkdown(text);
+                    document.getElementById("markdownText").style = "font-family:sans-serif;overflow-wrap:break-word;text-align:center;";
+                }
+            });
+        </script>
+        <center><button onclick="parent.hideGUI()" style="position:fixed;bottom:0;left:0;width:100%;">Back</button></center>
+    </body>
+</html>
