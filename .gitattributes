@@ -1,1 +1,4 @@
 text eol=crlf
+*.html -linguist-detectable
+*.js -linguist-detectable
+*.css -linguist-detectable
