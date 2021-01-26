@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Other</title>
+        <meta name="description" content="My random coding projects.">
+        <meta name="keywords" content="ari, meisels, ari meisels">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://avatars3.githubusercontent.com/u/68653653?s=48&v=4">
+        <link rel="stylesheet" href="/style.css">
+        <iframe id="iframe" src="/navbar.html" class="nav"></iframe>
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $("#iframe").on("load", function () {
+                var length = $("#iframe")[0].contentWindow.other.length - 1;
+                var frame = $("#iframe")[0].contentWindow.other;
+                do {
+                    document.getElementsByTagName("body")[0].innerHTML += "<br><h1><a href='" + frame[length] + "'>" + frame[length].replaceAll("/", "").charAt(0).toUpperCase() + frame[length].replaceAll("/", "").slice(1) + "</a>";
+                    length--;
+                } while (length > 0);
+            });
+        </script>
+    </body>
+</html>
