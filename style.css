@@ -24,6 +24,11 @@ small {
     font-size: small;
 }
 
+code {
+    font-size: small;
+    background-color: lightgray;
+}
+
 #container {
     background-color: lightgreen;
     height: 410px;
