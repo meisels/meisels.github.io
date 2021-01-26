@@ -16,6 +16,7 @@
         <img src="/markdown/message.png" width="auto" height="50">
         <p>So this got me thinking... how hard could it be? So I did a little Googling and copied the code from <a href="https://www.bigomega.dev/markdown-parser" target="_blank">this site</a>. Then I edited it a little to include more markdown stuff and added a GUI (Graphic User Interface). To see it, click <a href="#" onclick="showGUI()">here</a>.</p>
         <p>Just a fair warning, there are a few bugs. For example, the script is incapable of reading 2 sets of asterisks on 1 line. Use <code>*1**2*</code> (should produce <i>1</i><i>2</i> but instead produces <i>1**2</i>).</p>
+        <p>To use this on your own site, add this line of code: <code class="small">&lt;script src="https://arimeisels.com/markdown/markdown.js"&gt;&lt;/script&gt;</code>. Then, whenever you want to use it, use <code class="small">parseMarkdown([markdownText])</code>.</p>
         <script>
             function showGUI() {
                 document.getElementsByTagName("body")[0].style.visibility = "hidden";
