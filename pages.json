@@ -1,21 +1,25 @@
 {
     "count":"4",
-    "pages":{
-        "1":{
+    "pages":[
+        {
             "name":"ParentLocker Class List Downloader",
+            "type":"other",
             "url":"/parentlocker/classdownloader/"
         },
-        "2":{
+        {
             "name":"Flash Player Archive",
+            "type":"test",
             "url":"/flashplayer/"
         },
-        "3":{
+        {
             "name":"Markdown to HTML Conerter (buggy)",
+            "type":"other",
             "url":"/markdown/"
         },
-        "4":{
+        {
             "name":"Flash Projector for Linux (improved from Adobe's projector)",
+            "type":"other",
             "url":"/flashplayer.deb"
         }
-    }
+    ]
 }
