@@ -16,11 +16,13 @@
                 return response.json();
             })
             .then(function (myJson) {
-                var pageCount = myJson.count;
+                var pageCount = myJson.count - 1;
                 do {
-                    document.getElementsByTagName("body")[0].innerHTML += "<br><h2><a href='" + myJson.pages[pageCount].url + "'>" + myJson.pages[pageCount].name + "</a></h2>";
+                    if (myJson.pages[pageCount].type == "other") {
+                        document.getElementsByTagName("body")[0].innerHTML += "<br><h2><a href='" + myJson.pages[pageCount].url + "'>" + myJson.pages[pageCount].name + "</a></h2>";
+                    }
                     pageCount--;
-                } while (pageCount > 0);
+                } while (pageCount >= 0);
             });
         </script>
     </body>
