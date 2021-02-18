@@ -1,5 +1,5 @@
 {
-    "count":"4",
+    "count":"6",
     "pages":[
         {
             "name":"ParentLocker Class List Downloader",
@@ -20,6 +20,16 @@
             "name":"Flash Projector for Linux (improved from Adobe's projector)",
             "type":"other",
             "url":"/flashplayer.deb"
+        },
+        {
+            "name":"Batch Animation",
+            "type":"other",
+            "url":"/animate/"
+        },
+        {
+            "name":"Zoom on Startup",
+            "type":"other",
+            "url":"/zoom/"
         }
     ]
 }
